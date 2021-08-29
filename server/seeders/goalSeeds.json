@@ -1,81 +1,81 @@
 [
   {
-    "goalText": "Hello World",
+    "text": "Hello World",
     "area": "Physical",
     "user_id": 1
   },
   {
-    "goalText": "Hello World2",
+    "text": "Hello World2",
     "area": "Spiritual",
     "user_id": 1
   },
   {
-    "goalText": "Hello World3",
+    "text": "Hello World3",
     "area": "Emotional",
     "user_id": 1
   },
   {
-    "goalText": "Hello World4",
+    "text": "Hello World4",
     "area": "Social",
     "user_id": 1
   },
   {
-    "goalText": "Hello World5",
+    "text": "Hello World5",
     "area": "Intelectual",
     "user_id": 1
   },
   {
-    "goalText": "Hello World6",
+    "text": "Hello World6",
     "area": "Occupational",
     "user_id": 1
   },
   {
-    "goalText": "Hello World7",
+    "text": "Hello World7",
     "area": "Financial",
     "user_id": 1
   },
   {
-    "goalText": "Hello World8",
+    "text": "Hello World8",
     "area": "Personal",
     "user_id": 1
   },
   {
-    "goalText": "Halo World",
+    "text": "Halo World",
     "area": "Physical",
     "user_id": 2
   },
   {
-    "goalText": "Halo World2",
+    "text": "Halo World2",
     "area": "Spiritual",
     "user_id": 2
   },
   {
-    "goalText": "Halo World3",
+    "text": "Halo World3",
     "area": "Emotional",
     "user_id": 2
   },
   {
-    "goalText": "Halo World4",
+    "text": "Halo World4",
     "area": "Social",
     "user_id": 2
   },
   {
-    "goalText": "Halo World5",
+    "text": "Halo World5",
     "area": "Intelectual",
     "user_id": 2
   },
   {
-    "goalText": "Halo World6",
+    "text": "Halo World6",
     "area": "Occupational",
     "user_id": 2
   },
   {
-    "goalText": "Halo World7",
+    "text": "Halo World7",
     "area": "Financial",
     "user_id": 2
   },
   {
-    "goalText": "Halo World8",
+    "text": "Halo World8",
     "area": "Personal",
     "user_id": 2
   }

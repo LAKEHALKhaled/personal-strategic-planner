@@ -1,82 +1,35 @@
 [
   {
-    "text": "Hello World",
-    "area": "Physical",
-    "user_id": 1
+    "areaText": "Physical",
+    "areaAuthor": "Khaled 1"
   },
   {
-    "text": "Hello World2",
-    "area": "Spiritual",
-    "user_id": 1
+    "areaText": "Spiritual",
+    "areaAuthor": "Khaled 2"
   },
   {
-    "text": "Hello World3",
-    "area": "Emotional",
-    "user_id": 1
+    "areaText": "Emotional",
+    "areaAuthor": "Khaled 3"
   },
   {
-    "text": "Hello World4",
-    "area": "Social",
-    "user_id": 1
+    "areaText": "Social",
+    "areaAuthor": "Khaled 4"
   },
   {
-    "text": "Hello World5",
-    "area": "Intelectual",
-    "user_id": 1
+    "areaText": "Intelectual",
+    "areaAuthor": "Khaled 5"
   },
   {
-    "text": "Hello World6",
-    "area": "Occupational",
-    "user_id": 1
+    "areaText": "Occupational",
+    "areaAuthor": "Khaled 6"
   },
   {
-    "text": "Hello World7",
-    "area": "Financial",
-    "user_id": 1
+    "areaText": "Financial",
+    "areaAuthor": "Khaled 7"
   },
   {
-    "text": "Hello World8",
-    "area": "Personal",
-    "user_id": 1
-  },
-  {
-    "text": "Halo World",
-    "area": "Physical",
-    "user_id": 2
-  },
-  {
-    "text": "Halo World2",
-    "area": "Spiritual",
-    "user_id": 2
-  },
-  {
-    "text": "Halo World3",
-    "area": "Emotional",
-    "user_id": 2
-  },
-  {
-    "text": "Halo World4",
-    "area": "Social",
-    "user_id": 2
-  },
-  {
-    "text": "Halo World5",
-    "area": "Intelectual",
-    "user_id": 2
-  },
-  {
-    "text": "Halo World6",
-    "area": "Occupational",
-    "user_id": 2
-  },
-  {
-    "text": "Halo World7",
-    "area": "Financial",
-    "user_id": 2
-  },
-  {
-    "text": "Halo World8",
-    "area": "Personal",
-    "user_id": 2
+    "areaText": "Personal",
+    "areaAuthor": "Khaled 8"
   }
 ]
+

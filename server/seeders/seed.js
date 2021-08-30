@@ -1,21 +1,32 @@
 const db = require('../config/connection');
-const { User, Goal } = require('../models');
+const { User, Area } = require('../models');
 const userSeeds = require('./userSeeds.json');
 const goalSeeds = require('./areaSeeds.json');
 
 db.once('open', async () => {
   try {
     await User.deleteMany({});
-    await User.create(userSeeds);
-    
     await Area.deleteMany({});
-    await Area.create(goalSeeds);
 
+    await User.create(userSeeds);
+
+
+    for (let i = 0; i < areaSeeds.length; i++) {
+      const { _id, areaAuthor } = await Area.create(areaSeeds[i]);
+      const user = await User.findOneAndUpdate(
+        { username: areaAuthor },
+        {
+          $addToSet: {
+            thoughts: _id,
+          },
+        }
+      );
+    }
   } catch (err) {
     console.error(err);
     process.exit(1);
   }
 
-  console.log('Users & Goals are successfully created!');
+  console.log('Users & Areas are successfully created!');
   process.exit(0);
 });

@@ -1,4 +1,4 @@
 const User = require('./User');
-const Goal = require('./Area');
+const Area = require('./Area');
 
-module.exports = { User, Goal };
+module.exports = { User, Area };

@@ -19,10 +19,10 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  goals: [
+  areas: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Goals',
+      ref: 'Area',
     },
   ],
 });

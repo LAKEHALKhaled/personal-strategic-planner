@@ -1,15 +1,15 @@
 const db = require('../config/connection');
 const { User, Goal } = require('../models');
 const userSeeds = require('./userSeeds.json');
-const goalSeeds = require('./goalSeeds.json');
+const goalSeeds = require('./areaSeeds.json');
 
 db.once('open', async () => {
   try {
     await User.deleteMany({});
     await User.create(userSeeds);
     
-    await Goal.deleteMany({});
-    await Goal.create(goalSeeds);
+    await Area.deleteMany({});
+    await Area.create(goalSeeds);
 
   } catch (err) {
     console.error(err);

@@ -65,10 +65,10 @@ const resolvers = {
       );
     },
     removeArea: async (parent, { areaId }) => {
-      return Thought.findOneAndDelete({ _id: areaId });
+      return Area.findOneAndDelete({ _id: areaId });
     },
     removeGoal: async (parent, { areaId, goalId }) => {
-      return Thought.findOneAndUpdate(
+      return Area.findOneAndUpdate(
         { _id: areaId },
         { $pull: { goals: { _id: goalId } } },
         { new: true }

@@ -26,12 +26,12 @@ const SingleArea = () => {
   }
   return (
     <div className="my-3">
-      <h3 className="card-header bg-dark text-light p-2 m-0">
+      {/* <h4 className="card-header bg-dark text-light p-1 m-0">
         {area.areaAuthor} <br />
         <span style={{ fontSize: '1rem' }}>
           added this area on {area.createdAt}
         </span>
-      </h3>
+      </h4> */}
       <div className="bg-light py-4">
         <blockquote
           className="p-4"
@@ -42,16 +42,18 @@ const SingleArea = () => {
             lineHeight: '1.5',
           }}
         >
-          {area.areaText}
+          My {area.areaText} Goals
         </blockquote>
       </div>
 
-      <div className="my-5">
-        <GoalList goals={area.goals} />
-      </div>
       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
         <GoalForm areaId={area._id} />
       </div>
+      
+      <div className="my-5">
+        <GoalList goals={area.goals} />
+      </div>
+      
     </div>
   );
 };

@@ -1,7 +1,7 @@
 const db = require('../config/connection');
 const { User, Area } = require('../models');
 const userSeeds = require('./userSeeds.json');
-const goalSeeds = require('./areaSeeds.json');
+const areaSeeds = require('./areaSeeds.json');
 
 db.once('open', async () => {
   try {
@@ -17,7 +17,7 @@ db.once('open', async () => {
         { username: areaAuthor },
         {
           $addToSet: {
-            thoughts: _id,
+            areas: _id,
           },
         }
       );

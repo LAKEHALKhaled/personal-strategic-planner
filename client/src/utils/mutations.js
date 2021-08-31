@@ -28,8 +28,8 @@ export const ADD_AREA = gql`
   mutation addArea($areaText: String!, $areaAuthor: String!) {
     addArea(areaText: $areaText, areaAuthor: $areaAuthor) {
       _id
-      thoughtText
-      thoughtAuthor
+      areaText
+      areaAuthor
       createdAt
       goals {
         _id
@@ -45,7 +45,7 @@ mutation addGoal(
   $goalText: String!
   $goalAuthor: String!
 ) {
-  addComment(
+  addGoal(
     areaId: $areaId
     goalText: $goalText
     goalAuthor: $goalAuthor

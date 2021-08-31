@@ -73,7 +73,7 @@ const AreaForm = () => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="areaText"
-                placeholder="Here's a new area..."
+                placeholder="Add new area..."
                 value={areaText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
@@ -83,7 +83,7 @@ const AreaForm = () => {
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
-                Add an area of balance
+                Add Area
               </button>
             </div>
             {error && (

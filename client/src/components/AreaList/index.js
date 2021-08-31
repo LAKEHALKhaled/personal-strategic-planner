@@ -12,12 +12,12 @@ const AreaList = ({ areas, title }) => {
       {areas &&
         areas.map((area) => (
           <div key={area._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+            {/* <h4 className="card-header bg-primary text-light p-2 m-0">
               {area.areaAuthor} <br />
               <span style={{ fontSize: '1rem' }}>
                 added this area in {area.createdAt}
               </span>
-            </h4>
+            </h4> */}
             <div className="card-body bg-light p-2">
               <p>{area.areaText}</p>
             </div>
@@ -25,7 +25,7 @@ const AreaList = ({ areas, title }) => {
               className="btn btn-primary btn-block btn-squared"
               to={`/areas/${area._id}`}
             >
-              Add 1 or multiple goals that you want to acheave in this area of balance
+              Add/Review Goals
             </Link>
           </div>
         ))}

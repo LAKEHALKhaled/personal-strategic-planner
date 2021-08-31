@@ -42,18 +42,18 @@ export const QUERY_SINGLE_AREA = gql`
   }
 `;
 
-// export const QUERY_ME = gql`
-//   query me {
-//     me {
-//       _id
-//       username
-//       email
-//       areas {
-//         _id
-//         areaText
-//         areaAuthor
-//         createdAt
-//       }
-//     }
-//   }
-// `;
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      email
+      areas {
+        _id
+        areaText
+        areaAuthor
+        createdAt
+      }
+    }
+  }
+`;

@@ -41,7 +41,7 @@ const GoalForm = ({ areaId }) => {
 
   return (
     <div>
-      <h4> what are the goals you want to acheave in this area?</h4>
+      {/* <h4> what are the goals you want to acheave in this area of life?</h4> */}
 
       {Auth.loggedIn() ? (
         <>
@@ -60,7 +60,7 @@ const GoalForm = ({ areaId }) => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="goalText"
-                placeholder="Add your goal..."
+                placeholder="Add new goal..."
                 value={goalText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
@@ -70,7 +70,7 @@ const GoalForm = ({ areaId }) => {
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
-                Add a goal
+                Add Goal
               </button>
             </div>
           </form>

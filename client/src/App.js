@@ -13,6 +13,7 @@ import Login from './pages/Login';
 import SingleArea from './pages/SingleArea';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Profile from './pages/Profile';
 
 
 // Construct our main GraphQL API endpoint
@@ -54,6 +55,12 @@ function App() {
             </Route>
             <Route exact path="/signup">
               <Signup />
+            </Route>
+            <Route exact path="/areas/:username">
+              <Profile />
+            </Route>
+            <Route exact path="/me">
+              <Profile />
             </Route>
             <Route exact path="/areas/:areaId">
               <SingleArea />

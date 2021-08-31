@@ -18,30 +18,33 @@ const Home = () => {
           className="col-12 col-md-10 mb-3 p-3"
           style={{ border: '1px dotted #1a1a1a' }}
         >
-          <AreaForm />
+             <div className= "center">
+          {Auth.loggedIn() ? (
+            <>
+              <h3>you are logged in, you can Add more Areas and Goals on your Profile</h3>
+            </>
+          ) : (
+            <>
+             <h3>login to be able to add Areas and Goals</h3>
+            </>
+          )}
+            </div>
+           <img src="https://www.achs.edu.pk/assets/home/images/Vision.jpg" alt="" className= "center" />
         </div>
+     
+       
         <div className="col-12 col-md-8 mb-3">
           {loading ? (
             <div>Loading...</div>
           ) : (
             <AreaList
               areas={areas}
-              title="Some Feed for Area(s)..."
+              title="Anonymous Areas and goals..."
             />
           )}
         </div>
       </div>
-      <div>
-          {Auth.loggedIn() ? (
-            <>
-              <span>you are logged in, you can Add more Areas and Goals!</span>
-            </>
-          ) : (
-            <>
-             <div>login to be able to add Areas and Goals</div>
-            </>
-          )}
-        </div>
+      
     </main>
   );
 };

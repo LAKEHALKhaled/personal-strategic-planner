@@ -60,7 +60,7 @@ const GoalForm = ({ areaId }) => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="goalText"
-                placeholder="Add new goal..."
+                placeholder="Add new SMART goal..."
                 value={goalText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}

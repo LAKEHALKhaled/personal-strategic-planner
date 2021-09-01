@@ -4,7 +4,7 @@ import React from 'react';
 // Import the `useParams()` hook
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
+import Card from '../components/Card/Card'
 import GoalList from '../components/GoalList';
 import GoalForm from '../components/GoalForm';
 
@@ -32,25 +32,29 @@ const SingleArea = () => {
           added this area on {area.createdAt}
         </span>
       </h4> */}
-      <div className="bg-light py-4">
+      
+      <div className="bg-light py-1 center">
         <blockquote
-          className="p-4"
+          className="p-1"
           style={{
             fontSize: '1.5rem',
             fontStyle: 'italic',
-            border: '2px dotted #1a1a1a',
-            lineHeight: '1.5',
+            
           }}
         >
           My {area.areaText} Goals
         </blockquote>
       </div>
-
-      <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+      <div>
+       <img src="https://www.crosbyscholarsiredell.org/wp-content/uploads/sites/4/2020/01/Blue-Timeline-Cycle-Presentation-1-1024x516.png"  className="center" alt="" />
+       <Card/>
+      </div>
+      <div className="btn-black m-3 p-4 col-12">
+        <p>“A goal properly set is halfway reached.” Zig Ziglar</p>
         <GoalForm areaId={area._id} />
       </div>
       
-      <div className="my-5">
+      <div className="btn-black col-12 mb-5">
         <GoalList goals={area.goals} />
       </div>
       

@@ -55,7 +55,8 @@ const AreaForm = () => {
 
   return (
     <div>
-      <h3>Area of life balance</h3>
+      <h5>We sugggest that you pick 8 to 12 most important areas in your life carefully </h5>
+      <h6>Finance, Career, Health, Social, Family, Intelectual, Spiritual, Emotional,...</h6>
 
       {Auth.loggedIn() ? (
         <>

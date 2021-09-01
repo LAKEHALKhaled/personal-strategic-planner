@@ -59,7 +59,7 @@ function App() {
             <Route exact path="/areas/:username">
               <Profile />
             </Route>
-            <Route exact path="/me">
+            <Route exact path="/profile">
               <Profile />
             </Route>
             <Route exact path="/areas/:areaId">

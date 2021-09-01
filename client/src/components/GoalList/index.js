@@ -7,30 +7,23 @@ const GoalList = ({ goals = [] }) => {
   }
 
   return (
-    <>
-      <h3
-        className="p-5 display-inline-block"
-        style={{ borderBottom: '1px dotted #1a1a1a' }}
-      >
-        Goals
-      </h3>
-      <div className="flex-row my-4">
+    
+      <div className="my-4">
         {goals &&
           goals.map((goal) => (
-            <div key={goal._id} className="col-12 mb-3 pb-3">
-              <div className="p-3 bg-dark text-light">
-                <h5 className="card-header">
-                  {goal.goalAuthor} goal added {' '}
-                  <span style={{ fontSize: '0.825rem' }}>
-                    on {goal.createdAt}
-                  </span>
+            <div key={goal._id} className="card my-5 p-5 text-center">
+              <div className="card-body btn-white p-2 mb-2">
+                <h5>
+                {goal.goalText} 
                 </h5>
-                <p className="card-body">{goal.goalText}</p>
+                <small>
+                 added on {goal.createdAt}
+                </small>
               </div>
             </div>
           ))}
       </div>
-    </>
+   
   );
 };
 

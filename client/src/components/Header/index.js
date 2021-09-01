@@ -1,46 +1,117 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { Link } from 'react-router-dom';
-
 import Auth from '../../utils/auth';
+import EventNoteIcon from '@material-ui/icons/EventNote';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
+import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
 
-const Header = () => {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
+
+export default function Header() {
+  const classes = useStyles();
+
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
-  return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <div>
-          <Link className="text-light" to="/">
-            <h1 className="m-0">Personal Strategic Planning</h1>
-          </Link>
-          <p className="m-0">Start a set of goals that balance your areas of life</p>
-        </div>
-        <div>
-          {Auth.loggedIn() ? (
-            <>
-              <Link className="btn btn-lg btn-info m-2" to="/me">
-                {Auth.getProfile().data.username}'s profile
-              </Link>
-              <button className="btn btn-lg btn-light m-2" onClick={logout}>
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link className="btn btn-lg btn-info m-2" to="/login">
-                Login
-              </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/signup">
-                Signup
-              </Link>
-            </>
-          )}
-        </div>
-      </div>
-    </header>
-  );
-};
 
-export default Header;
+  return (
+    <Container maxWidth="lg">
+    <div className={classes.root}>
+      <AppBar position="fixed" color="light" elevation={0} style={{borderBottom: '0px solid #eee',boxShadow: '0 6px 8px #0001'}}>
+        <Toolbar>
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+         
+          
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+          
+      
+      
+                <Link className="decoration" to="/">
+                <Button
+                color="inherit"
+                size="large"
+                className="btn.btn-primary"
+                startIcon={<EventNoteIcon/>}>
+                   PSP - Strategic Planner
+                 </Button>
+                </Link> 
+
+
+          </Typography>
+          <div>
+            {Auth.loggedIn() ? (
+              <>
+                <Link  className="decoration" to="/profile">
+                <Button
+                color="inherit"
+                size="large"
+                className={classes.button}
+                startIcon={<AccountCircle />}>
+                   Profile
+                 </Button>
+                </Link>
+
+                <Link className="decoration" to="/">
+                <Button
+                color="inherit"
+                size="large"
+                onClick={logout}
+                className={classes.button}
+                startIcon={<ExitToAppIcon />}>
+                   Logout
+                 </Button>
+                </Link>
+              </>
+            ):(
+              <>
+                
+                <Link className="decoration" to="/login">
+                <Button
+                color="inherit"
+                size="large"
+                className={classes.button}
+                startIcon={<VpnKeyIcon/>}>
+                   Login
+                 </Button>
+                </Link>
+
+                <Link className="decoration" to="/signup">
+                <Button
+                color="inherit"
+                size="large"
+                className={classes.button}
+                startIcon={<AssignmentIndIcon/>}>
+                   Signup
+                 </Button>
+                </Link>
+
+              </>
+            )}
+          </div>
+        </Toolbar>
+      </AppBar>
+    </div>
+    </Container>
+  );
+}

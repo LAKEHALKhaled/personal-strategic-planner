@@ -1,7 +1,32 @@
+import { useMutation } from '@apollo/client';
+import {REMOVE_GOAL} from '../../utils/mutations';
 
 import React from 'react';
+import Auth from '../../utils/auth'
 
-const GoalList = ({ goals = [] }) => {
+const GoalList = ({ goals = [], isLoggedInUser = true }) => {
+
+  const [removeGoal, { error }] = useMutation(REMOVE_GOAL)
+
+  const handleRemoveGoal = async (goalId) => {
+    
+    console.log(goalId)
+    console.log(window.location.href.split("/")[4])
+    const areaId = window.location.href.split("/")[4]
+      const token = Auth.loggedIn() ? Auth.getToken() : null;
+      if (!token) {
+        return false;
+      }
+    try {
+      const { data } = await removeGoal({
+        variables: { areaId, goalId },
+      });
+      console.log(data)
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   if (!goals.length) {
     return <h3>No Goals are set, please enter your goals that you want to acheave!</h3>;
   }
@@ -20,6 +45,17 @@ const GoalList = ({ goals = [] }) => {
                  added on {goal.createdAt}
                 </small>
               </div>
+              {isLoggedInUser && (
+            <button
+              className="btn btn-black btn-rounded "
+              type="button"
+              onClick={() => handleRemoveGoal(goal._id)}
+            >
+              <span role="img" aria-label="delete">
+                Remove Goal
+              </span>
+             </button>
+              )}
             </div>
           ))}
       </div>

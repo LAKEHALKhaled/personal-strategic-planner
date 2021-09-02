@@ -9,7 +9,6 @@ import Auth from '../../utils/auth';
 
 const AreaForm = () => {
   const [areaText, setAreaText] = useState('');
-
   const [characterCount, setCharacterCount] = useState(0);
 
   const [addArea, { error }] = useMutation(ADD_AREA, {
@@ -21,6 +20,7 @@ const AreaForm = () => {
           query: QUERY_AREAS,
           data: { areas: [addArea, ...areas] },
         });
+        
       } catch (e) {
         console.error(e);
       }

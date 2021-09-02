@@ -4,21 +4,10 @@ import { useMutation } from '@apollo/client';
 import {REMOVE_AREA} from '../../utils/mutations';
 import { QUERY_ME } from '../../utils/queries';
 import Auth from '../../utils/auth'
+
 const AreaList = ({ areas, title, isLoggedInUser = true}) => {
   
-  // const [removeArea, { error }] = useMutation(REMOVE_AREA, {
-  //   update(cache, { data: { removeArea } }) {
-      
-  //     try {
-  //       cache.writeQuery({
-  //         query: QUERY_ME,
-  //         data: { me: removeArea },
-  //       });
-  //     } catch (e) {
-  //       console.error(e);
-  //     }
-  //   },
-  // });
+  
   const [removeArea, { error }] = useMutation(REMOVE_AREA)
 
 

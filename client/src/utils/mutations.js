@@ -76,3 +76,18 @@ export const REMOVE_AREA = gql`
     }
   }
 `;
+
+export const REMOVE_GOAL = gql`
+  mutation removeGoal($areaId: ID!, $goalId: ID!) {
+    removeGoal(areaId: $areaId, goalId: $goalId) {
+      _id
+      areaText
+      areaAuthor
+      createdAt
+      goals {
+        _id
+        goalText
+      }
+    }
+  }
+`;

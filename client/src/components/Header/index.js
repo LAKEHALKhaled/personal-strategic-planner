@@ -13,11 +13,14 @@ import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
+import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
+import AdjustIcon from '@material-ui/icons/Adjust';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -69,6 +72,26 @@ export default function Header() {
                 className={classes.button}
                 startIcon={<AccountCircle />}>
                    Profile
+                 </Button>
+                </Link>
+
+                <Link  className="decoration" to="/Swot">
+                <Button
+                color="inherit"
+                size="large"
+                className={classes.button}
+                startIcon={<BusinessCenterIcon />}>
+                   Swot
+                 </Button>
+                </Link>
+
+                <Link  className="decoration" to="/BalanceWheel">
+                <Button
+                color="inherit"
+                size="large"
+                className={classes.button}
+                startIcon={<AdjustIcon />}>
+                   Wheel
                  </Button>
                 </Link>
 

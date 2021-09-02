@@ -1722,7 +1722,7 @@ label form [type='radio'] {
 }
 
 .border{
-  border:1px solid #f0f0f0
+  border:1px solid #f0f0f0;
 }
 
 .decoration{
@@ -1734,7 +1734,9 @@ label form [type='radio'] {
 
 .decoration:hover{
   text-decoration: none;
-  /* color: #fff; */
+  color: #fff;
+  background-color: #000;
+  border-radius: 5px;
 }
 
 .works{

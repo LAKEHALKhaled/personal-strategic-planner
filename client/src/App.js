@@ -56,9 +56,6 @@ function App() {
             <Route exact path="/signup">
               <Signup />
             </Route>
-            <Route exact path="/areas/:username">
-              <Profile />
-            </Route>
             <Route exact path="/profile">
               <Profile />
             </Route>

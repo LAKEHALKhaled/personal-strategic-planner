@@ -62,3 +62,17 @@ mutation addGoal(
   }
 }
 `;
+export const REMOVE_AREA = gql`
+  mutation removeArea($AreaText: String!, $areaAuthor: String!) {
+    removeArea(areaText: $areaText, areaAuthor: $areaAuthor) {
+      _id
+      areaText
+      areaAuthor
+      createdAt
+      goals {
+        _id
+        goalText
+      }
+    }
+  }
+`;

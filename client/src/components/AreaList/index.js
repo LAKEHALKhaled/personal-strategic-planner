@@ -1,7 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import {REMOVE_AREA} from '../../utils/mutations';
+import { QUERY_ME } from '../../utils/queries';
 
 const AreaList = ({ areas, title }) => {
+  const [removeArea, { error }] = useMutation(REMOVE_AREA, {
+    update(cache, { data: { removeArea } }) {
+      try {
+        cache.writeQuery({
+          query: QUERY_ME,
+          data: { me: removeArea },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  });
+  const handleRemoveArea = async (area) => {
+    try {
+      const { data } = await removeArea({
+        variables: { area },
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   if (!areas.length) {
     return <h3>No Areas of life balance exist so far, create new once</h3>;
   }
@@ -23,11 +48,26 @@ const AreaList = ({ areas, title }) => {
               <h1 style={{fontSize: 3+'rem'}}>{area.areaText}</h1>
             </div>
             <Link
-              className="btn btn-black btn-lg btn-rounded "
+              className="btn btn-black m-5 btn-rounded "
               to={`/areas/${area._id}`}
             >
-              Add/Review Goals
+              Review Goals
             </Link>
+
+            <button
+                        type="button"
+                        onClick={() => handleRemoveArea(area._id)}
+                      >
+                        <span role="img" aria-label="delete">
+                          ✖️
+                        </span>
+             </button>
+            {/* <Link
+              className="btn btn-black btn-rounded "
+              to={`/areas/${area._id}`}
+            >
+              Remove Area
+            </Link> */}
           </div>
         ))}
     </div>

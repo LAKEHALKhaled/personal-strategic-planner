@@ -25,7 +25,7 @@ const SingleArea = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="my-3">
+    <div className="my-3 ">
       {/* <h4 className="card-header bg-dark text-light p-1 m-0">
         {area.areaAuthor} <br />
         <span style={{ fontSize: '1rem' }}>
@@ -33,7 +33,7 @@ const SingleArea = () => {
         </span>
       </h4> */}
       
-      <div className="bg-light py-1 center">
+      <div className="card py-1 mt-20 text-center center">
         <blockquote
           className="p-1"
           style={{
@@ -42,22 +42,16 @@ const SingleArea = () => {
             
           }}
         >
-          My {area.areaText} Goals
+         <h1>My {area.areaText} Goals</h1> 
         </blockquote>
       </div>
-      <div>
-       <img src="https://www.crosbyscholarsiredell.org/wp-content/uploads/sites/4/2020/01/Blue-Timeline-Cycle-Presentation-1-1024x516.png"  className="center" alt="" />
-       <Smart/>
-      </div>
-      <div className="btn-black m-3 p-4 col-12">
-        <p>“A goal properly set is halfway reached.” Zig Ziglar</p>
+      
+      <div className="col-12 col-md-10 mb-3 p-3 center text-center card mt-5 pt-5">
         <GoalForm areaId={area._id} />
       </div>
-      
       <div className="btn-black col-12 mb-5">
         <GoalList goals={area.goals} />
       </div>
-      
     </div>
   );
 };

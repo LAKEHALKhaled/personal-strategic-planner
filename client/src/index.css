@@ -540,7 +540,9 @@ a:hover {
 .mt-5 {
   margin-top: 1.625rem !important;
 }
-
+.mt-20{
+  margin-top: 6.50rem !important;
+}
 .mt-auto {
   margin-top: auto !important;
 }
@@ -1090,7 +1092,7 @@ a:hover {
 
 .card {
   border: 1px solid whitesmoke;
-  background-color: #f0f0f0;
+  background-color: #f8f9fa;
   margin-bottom: 1rem;
 }
 

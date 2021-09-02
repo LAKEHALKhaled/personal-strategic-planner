@@ -46,7 +46,7 @@ const Home = () => {
   }, []);
   return (
 
-    <Container maxWidth="lg" className="pt-20">
+    <Container maxWidth="lg" className="pt-5">
         <div className="pt-20 pb-20">
         <img className= "center" src="https://pbs.twimg.com/media/Ddel7RRV0AAsllR.jpg" alt=""></img>
         </div> 
@@ -59,15 +59,16 @@ const Home = () => {
            you'll suffer fewer problems if you know what your weaknesses are, 
            and if you manage these weaknesses so that they don't matter in the work you do.</p>
            <hr></hr>
-           <h6> So how you go about identifying these strengths and weaknesses,
+           <h6 className=" mb-5"> So how you go about identifying these strengths and weaknesses,
            and analyzing the opportunities and threats that flow from them?
             SWOT Analysis is a useful technique that helps you do this.</h6>
-        </div>
-        <div className="col-12 col-md-10 mb-3 p-5 text-center center card mt-5 pt-5">
-        <Swot/>
+            <Swot/>
         </div>
         
-        <div className="pt-20 pb-20">
+        
+        
+        
+        <div className="pt-20 pb-5">
         <img className= "center" src="https://www.toolshero.com/wp-content/uploads/2018/03/smart-goals-toolshero.jpg" alt=""></img>
         </div> 
         <div className="col-12 col-md-10 mb-3 p-5 text-center center card mt-5 pt-5">
@@ -85,7 +86,7 @@ const Home = () => {
         <Smart/>
         </div>
 
-        <div className="pt-20 pb-20">
+        <div className="pt-20 pb-5">
         <img className= "center" src="https://images.unsplash.com/photo-1510024161681-8a1f66ed1a25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt=""></img>
         </div> 
         <div className="col-12 col-md-10 mb-3 p-5 text-center center card mt-5 pt-5">
@@ -111,7 +112,7 @@ const Home = () => {
         
         
         
-            <div className="pt-20">
+            <div className="pt-5">
            <img src="https://images.unsplash.com/photo-1506784926709-22f1ec395907?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1948&q=80" alt="" className= "center" />
            </div>
         
@@ -127,11 +128,11 @@ const Home = () => {
                 <h4>Anonymous</h4>
                 <h1 className="mb-0" style={{fontSize: 4+'rem'}}>Areas <span style={{color: 'red'}}>&</span> Goals</h1>
               </div>
-              <div className="text-center m-5 pb-20">
+              {/* <div className="text-center m-5 pb-5">
                 <AreaList
                   areas={areas}
                 />
-               </div>
+               </div> */}
                 
               
             </div>

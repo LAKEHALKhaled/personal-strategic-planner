@@ -37,7 +37,7 @@ export default function Header() {
   return (
     <Container maxWidth="lg">
     <div className={classes.root}>
-      <AppBar position="fixed" color="light" elevation={0} style={{borderBottom: '0px solid #eee',boxShadow: '0 6px 8px #0001'}}>
+      <AppBar position="fixed" elevation={0} style={{borderBottom: '0px solid #eee',boxShadow: '0 6px 8px #0001'}}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
          

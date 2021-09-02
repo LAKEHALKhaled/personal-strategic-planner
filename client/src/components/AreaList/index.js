@@ -3,26 +3,40 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import {REMOVE_AREA} from '../../utils/mutations';
 import { QUERY_ME } from '../../utils/queries';
+import Auth from '../../utils/auth'
+const AreaList = ({ areas, title, isLoggedInUser = true}) => {
+  
+  // const [removeArea, { error }] = useMutation(REMOVE_AREA, {
+  //   update(cache, { data: { removeArea } }) {
+      
+  //     try {
+  //       cache.writeQuery({
+  //         query: QUERY_ME,
+  //         data: { me: removeArea },
+  //       });
+  //     } catch (e) {
+  //       console.error(e);
+  //     }
+  //   },
+  // });
+  const [removeArea, { error }] = useMutation(REMOVE_AREA)
 
-const AreaList = ({ areas, title }) => {
-  const [removeArea, { error }] = useMutation(REMOVE_AREA, {
-    update(cache, { data: { removeArea } }) {
-      try {
-        cache.writeQuery({
-          query: QUERY_ME,
-          data: { me: removeArea },
-        });
-      } catch (e) {
-        console.error(e);
+
+
+
+  const handleRemoveArea = async (areaId) => {
+    console.log(areaId)
+      const token = Auth.loggedIn() ? Auth.getToken() : null;
+      if (!token) {
+        return false;
       }
-    },
-  });
-  const handleRemoveArea = async (area) => {
     try {
       const { data } = await removeArea({
-        variables: { area },
+        variables: { areaId },
       });
+      console.log(data)
     } catch (err) {
+      alert('oui dkhalna555555')
       console.error(err);
     }
   };
@@ -53,15 +67,17 @@ const AreaList = ({ areas, title }) => {
             >
               Review Goals
             </Link>
-
+            {isLoggedInUser && (
             <button
-                        type="button"
-                        onClick={() => handleRemoveArea(area._id)}
-                      >
-                        <span role="img" aria-label="delete">
-                          ✖️
-                        </span>
+              className="btn btn-black btn-rounded "
+              type="button"
+              onClick={() => handleRemoveArea(area._id)}
+            >
+              <span role="img" aria-label="delete">
+                Remove Area
+              </span>
              </button>
+              )}
             {/* <Link
               className="btn btn-black btn-rounded "
               to={`/areas/${area._id}`}

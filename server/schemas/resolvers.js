@@ -66,6 +66,7 @@ const resolvers = {
     },
     removeArea: async (parent, { areaId }) => {
       return Area.findOneAndDelete({ _id: areaId });
+      
     },
     removeGoal: async (parent, { areaId, goalId }) => {
       return Area.findOneAndUpdate(

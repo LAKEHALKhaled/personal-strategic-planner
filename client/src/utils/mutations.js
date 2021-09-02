@@ -63,8 +63,8 @@ mutation addGoal(
 }
 `;
 export const REMOVE_AREA = gql`
-  mutation removeArea($AreaText: String!, $areaAuthor: String!) {
-    removeArea(areaText: $areaText, areaAuthor: $areaAuthor) {
+  mutation removeArea($areaId: ID!) {
+    removeArea(areaId: $areaId) {
       _id
       areaText
       areaAuthor

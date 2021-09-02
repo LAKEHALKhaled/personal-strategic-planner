@@ -7,6 +7,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
 const Profile = () => {
+  
   const username = Auth.loggedIn() && Auth.getProfile().data.username;
   const { loading, data } = useQuery(QUERY_USER, {variables: { username: username }});
   
@@ -26,7 +27,7 @@ const Profile = () => {
         <div className="col-12 col-md-10 mb-3 p-3 text-center card mt-5 pt-5">
         
         
-            <AreaForm />
+          <AreaForm />
           </div>
         <div className="col-12 col-md-10 mb-5">
           <AreaList

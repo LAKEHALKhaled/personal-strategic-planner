@@ -2,15 +2,29 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import {REMOVE_AREA} from '../../utils/mutations';
-import { QUERY_ME } from '../../utils/queries';
+import { QUERY_AREAS } from '../../utils/queries';
 import Auth from '../../utils/auth'
-
+import Button from '@material-ui/core/Button';
 const AreaList = ({ areas, title, isLoggedInUser = true}) => {
   
   
-  const [removeArea, { error }] = useMutation(REMOVE_AREA)
+  // const [removeArea, { error }] = useMutation(REMOVE_AREA)
 
+  const [removeArea, { error }] = useMutation(REMOVE_AREA, {
+    update(cache, { data: { removeArea } }) {
+      try {
+        const { areas } = cache.readQuery({ query: QUERY_AREAS });
 
+        cache.writeQuery({
+          query: QUERY_AREAS,
+          data: { areas: [...areas] },
+        });
+        
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  });
 
 
   const handleRemoveArea = async (areaId) => {
@@ -23,15 +37,16 @@ const AreaList = ({ areas, title, isLoggedInUser = true}) => {
       const { data } = await removeArea({
         variables: { areaId },
       });
+      window.location.reload()
       console.log(data)
     } catch (err) {
-      alert('oui dkhalna555555')
+     
       console.error(err);
     }
   };
 
-  if (!areas.length) {
-    return <h3>No Areas of life balance exist so far, create new once</h3>;
+  if (!areas?.length) {
+    return <h5 className="text-center">No Areas added yet, create new once</h5>;
   }
 
   return (
@@ -51,21 +66,20 @@ const AreaList = ({ areas, title, isLoggedInUser = true}) => {
               <h1 style={{fontSize: 3+'rem'}}>{area.areaText}</h1>
             </div>
             <Link
-              className="btn btn-black m-5 btn-rounded "
+              
               to={`/areas/${area._id}`}
             >
+              <Button variant="contained" color="primary" className="py-2 m-5" disableElevation  type="submit">
               Review Goals
+              </Button>
             </Link>
             {isLoggedInUser && (
-            <button
-              className="btn btn-black btn-rounded "
-              type="button"
-              onClick={() => handleRemoveArea(area._id)}
-            >
+            <Button variant="contained" color="primary" className="py-2 m-5" disableElevation  type="submit"
+              onClick={() => handleRemoveArea(area._id)}>
               <span role="img" aria-label="delete">
                 Remove Area
               </span>
-             </button>
+              </Button>
               )}
             {/* <Link
               className="btn btn-black btn-rounded "

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-
+import Button from '@material-ui/core/Button';
 import { ADD_GOAL } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
@@ -69,9 +69,9 @@ const GoalForm = ({ areaId }) => {
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+            <Button variant="contained" color="primary" className=" mb-3 py-1" disableElevation  type="submit">
                 Add Goal
-              </button>
+                </Button>
             </div>
           </form>
         </>

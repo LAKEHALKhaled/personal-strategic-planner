@@ -1,6 +1,6 @@
 import { useMutation } from '@apollo/client';
 import {REMOVE_GOAL} from '../../utils/mutations';
-
+import Button from '@material-ui/core/Button';
 import React from 'react';
 import Auth from '../../utils/auth'
 
@@ -21,14 +21,16 @@ const GoalList = ({ goals = [], isLoggedInUser = true }) => {
       const { data } = await removeGoal({
         variables: { areaId, goalId },
       });
+      console.log(goals)
       console.log(data)
     } catch (err) {
       console.error(err);
     }
   };
-
+  console.log(goals)
   if (!goals.length) {
-    return <h3>No Goals are set, please enter your goals that you want to acheave!</h3>;
+
+    return <h5 className="text-center">No Areas added yet, create new once</h5>;
   }
 
   return (
@@ -46,15 +48,13 @@ const GoalList = ({ goals = [], isLoggedInUser = true }) => {
                 </small>
               </div>
               {isLoggedInUser && (
-            <button
-              className="btn btn-black btn-rounded "
-              type="button"
+           <Button variant="contained" color="primary" className=" mb-3 py-1" disableElevation  type="submit"
               onClick={() => handleRemoveGoal(goal._id)}
             >
               <span role="img" aria-label="delete">
                 Remove Goal
               </span>
-             </button>
+             </Button>
               )}
             </div>
           ))}

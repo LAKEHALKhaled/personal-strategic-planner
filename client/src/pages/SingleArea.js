@@ -1,6 +1,6 @@
 
 import React from 'react';
-
+import Button from '@material-ui/core/Button';
 // Import the `useParams()` hook
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
@@ -42,8 +42,17 @@ const SingleArea = () => {
             
           }}
         >
-         <h1>My {area.areaText} Goals</h1> 
+         <h1>My {area.areaText} Goals</h1>
+          <Button variant="contained" color="primary" className="py-2 m-3" disableElevation  type="submit">
+                  
+                  Ask PSP 
+          </Button>
+          <Button variant="contained" color="primary" className="py-2 m-3" disableElevation  type="submit">
+                  
+                  {area.areaText} advisor
+          </Button>
         </blockquote>
+
       </div>
       
       <div className="col-12 col-md-10 mb-3 p-3 center text-center card mt-5 pt-5">

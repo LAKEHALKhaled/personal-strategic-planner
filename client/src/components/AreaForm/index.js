@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-
+import Button from '@material-ui/core/Button';
 import { ADD_AREA} from '../../utils/mutations';
 import { QUERY_AREAS } from '../../utils/queries';
 
@@ -37,7 +37,8 @@ const AreaForm = () => {
           areaAuthor: Auth.getProfile().data.username,
         },
       });
-
+      console.log(data)
+      // setUserData(data)
       setAreaText('');
     } catch (err) {
       console.error(err);
@@ -55,8 +56,8 @@ const AreaForm = () => {
 
   return (
     <div>
-      <h5>We sugggest that you pick 8 to 12 most important areas in your life carefully </h5>
-      <h6>Finance, Career, Health, Social, Family, Intelectual, Spiritual, Emotional,...</h6>
+      <h5>Pick 8 to 12 most important areas in your life</h5>
+      <h6>Finance, Career, Health, Social, Family, Intelectual, Spiritual, Emotional, etc...</h6>
 
       {Auth.loggedIn() ? (
         <>
@@ -83,9 +84,10 @@ const AreaForm = () => {
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+              <Button variant="contained" color="primary" className="py-2" disableElevation  type="submit">
+                  
                 Add Area
-              </button>
+              </Button>
             </div>
             {error && (
               <div className="col-12 my-3 bg-danger text-white p-3">

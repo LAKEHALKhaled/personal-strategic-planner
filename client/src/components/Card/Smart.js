@@ -59,8 +59,8 @@ export default function ControlledAccordions() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-          I will land my dream job working for a SaaS company like Shopify or Oberlo and travel long-term as a digital nomad.
-          To achieve this, I will apply to 1 job per week for 2 months — submitting a total of 8 job applications.
+          I will land my dream job working for a software company like Google or Facebook.
+          To achieve this, I will apply to 10 jobs per week for 3 months — submitting a total of 120 job applications.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -74,8 +74,7 @@ export default function ControlledAccordions() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-          I’m going to become a search engine optimization (SEO) specialist for a leading 
-          software-as-a-service (SaaS) company like Shopify or Oberlo and work remotely.
+          I’m going to become a working as a software developer for a software company like Google or Facebook.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -89,7 +88,7 @@ export default function ControlledAccordions() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-          I will apply to a minimum of 8 job applications within two months.
+          I will apply to a minimum of 120 job applications within 3 months.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -103,8 +102,8 @@ export default function ControlledAccordions() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-          I’ve worked as an SEO specialist for two years
-           in an office for an accounting firm, and I’m good at my job.
+          I’ve studied for 3 months in a full time BootCamp and learned a lot of languages.
+           
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -120,7 +119,6 @@ export default function ControlledAccordions() {
           <Typography>
           I want to collaborate with interesting people, contribute to something innovative,
            and join a company with room for me to grow.
-           Also, I want to travel long-term as a digital nomad.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -134,8 +132,8 @@ export default function ControlledAccordions() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-          I will apply to 8 suitable job applications
-           within two months by submitting 1 application per week.
+          I will apply to 120 suitable job applications
+           within 3 months by submitting 10 application per week.
           </Typography>
         </AccordionDetails>
       </Accordion>
